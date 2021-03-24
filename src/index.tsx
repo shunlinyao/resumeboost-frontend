@@ -3,12 +3,16 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { Windmill } from "@windmill/react-ui";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Windmill>
+      <App />
+    </Windmill>
   </React.StrictMode>,
   document.getElementById("root")
 );
