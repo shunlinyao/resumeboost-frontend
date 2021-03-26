@@ -27,6 +27,7 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
+    "jsx-a11y/mouse-events-have-key-events": "warn",
     "react/prop-types": "off",
     "linebreak-style": "off",
     "prettier/prettier": [

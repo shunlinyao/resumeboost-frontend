@@ -7,10 +7,11 @@ import { Windmill } from "@windmill/react-ui";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import theme from "./theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Windmill>
+    <Windmill theme={theme}>
       <App />
     </Windmill>
   </React.StrictMode>,
