@@ -8,11 +8,11 @@ interface Props {
 
 export const DashboardScoreCard: React.FC<Props> = ({ metric, score }) => {
   return (
-    <div className="h-64 w-64  rounded-lg border shadow-lg p-10">
-      <div className="flex justify-center h-1/6 text-2xl font-semibold text-gray-500 ">
+    <div className=" rounded-lg border shadow-lg p-10 w-64">
+      <div className="flex justify-center text-2xl font-semibold text-gray-500 ">
         {metric}
       </div>
-      <div className="flex items-center justify-center font-bold h-4/6 text-6xl">
+      <div className="flex items-center justify-center font-bold h-4/6 text-5xl">
         {score}
       </div>
     </div>

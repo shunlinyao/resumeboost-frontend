@@ -5,8 +5,8 @@ import ScoreCard from "../components/DashboardScoreCard";
 export const DashboardPage = () => {
   return (
     <div className="flex space-x-6">
-      <div className="w-1/2 flex flex-col space-y-6 justify-between">
-        <div className="flex">
+      <div className="w-1/2 flex flex-col space-y-6">
+        <div className="flex space-x-6 pt-16">
           <ScoreCard metric="Visual" score={4.7} />
           <ScoreCard metric="Content" score={3.8} />
           <ScoreCard metric="Relevance" score={4.2} />
