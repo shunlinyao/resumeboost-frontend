@@ -35,6 +35,27 @@ export const DashboardReviews = () => {
             relevance={5}
             comment="test comment"
           />
+          <ReviewEntry
+            date="2015-01-24"
+            visual={4}
+            content={3}
+            relevance={5}
+            comment="test comment"
+          />
+          <ReviewEntry
+            date="2015-01-24"
+            visual={4}
+            content={3}
+            relevance={5}
+            comment="test comment"
+          />
+          <ReviewEntry
+            date="2015-01-24"
+            visual={4}
+            content={3}
+            relevance={5}
+            comment="test comment"
+          />
         </TableBody>
       </Table>
       <TableFooter className="table-fixed">
