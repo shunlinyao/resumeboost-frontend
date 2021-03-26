@@ -18,15 +18,7 @@ const SignUp: React.FC = () => {
   });
 
   return (
-    <div
-      className="h-screen w-screen flex justify-around content-center items-center"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "auto",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "left bottom",
-      }}
-    >
+    <div className="h-screen w-screen flex justify-around content-center items-center">
       <div
         className="bg-white h-screen w-1/2 flex content-center"
         style={{
