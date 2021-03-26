@@ -1,14 +1,16 @@
 import "rc-slider/assets/index.css";
 import React from "react";
 import { Badge, Button, Textarea, Label } from "@windmill/react-ui";
-import { useFormik } from "formik";
-
+import { Form, useFormik } from "formik";
 import Slider from "rc-slider";
 
 const Feedback: React.FC = () => {
   const formik = useFormik({
     initialValues: {
       response: "",
+      rating1: 0,
+      rating2: 0,
+      rating3: 0,
     },
     onSubmit: (values) => {
       console.log(values);
@@ -16,10 +18,10 @@ const Feedback: React.FC = () => {
   });
 
   return (
-    <div className="w-full h-screen flex justify-center content-center items-center">
+    <div className="w-full h-full flex justify-center content-center items-center">
       <div className="my-12 mx-20 w-1/2">{/* (Left part) */}</div>
       <div className="mr-8 w-1/2 flex-reverse justify-center content-center items-center">
-        <div className="w-full border-purple-700 border-4 my-12 rounded-md p-12 bg-white">
+        <div className="w-full shadow my-12 rounded-md p-12 bg-white">
           <h1 className="text-3xl">Satoshi Nakamoto</h1>
           <div className="my-4 flex-wrap">
             <Badge className="text-lg bg-gray-200 p-2 mx-2" type="neutral">
@@ -30,20 +32,45 @@ const Feedback: React.FC = () => {
             </Badge>
           </div>
         </div>
-        <div className="w-full border-purple-700 border-4 my-12 rounded-md p-12 bg-white">
-          <div style={{ width: 400, margin: 50 }}>
-            <p>Slider with fixed values</p>
-            <Slider
-              min={1}
-              max={5}
-              defaultValue={3}
-              marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
-              step={1}
-            />
+        <form onSubmit={formik.handleSubmit}>
+          <div className="w-full shadow my-12 rounded-md pt-8 pb-16 bg-white">
+            <h1 className="ml-8 font-normal text-xl mb-4">Rating</h1>
+            <div className="w-128 mx-20">
+              <span>Visual</span>
+              <Slider
+                className="mx-4 mt-2"
+                min={1}
+                max={5}
+                defaultValue={3}
+                marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
+                step={1}
+              />
+            </div>
+            <div className="w-128 mx-20 mt-12">
+              <span>Content</span>
+              <Slider
+                className="mx-4 mt-2"
+                min={1}
+                max={5}
+                defaultValue={3}
+                marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
+                step={1}
+              />
+            </div>
+            <div className="w-128 mx-20 my-12">
+              <span>Relevance</span>
+              <Slider
+                className="mx-4 mt-2"
+                min={1}
+                max={5}
+                defaultValue={3}
+                marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
+                step={1}
+              />
+            </div>
           </div>
-        </div>
-        <div className="w-full my-12">
-          <form onSubmit={formik.handleSubmit}>
+
+          <div className="w-full my-12">
             <Label>
               <Textarea
                 css=""
@@ -59,8 +86,8 @@ const Feedback: React.FC = () => {
             <Button className="float-right my-8" type="submit">
               Submit
             </Button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

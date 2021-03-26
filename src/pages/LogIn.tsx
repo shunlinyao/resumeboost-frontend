@@ -33,7 +33,7 @@ const LogIn: React.FC = () => {
         <div className="w-full">
           <h1 className="text-5xl font-medium py-2">Log In</h1>
           <p className="py-4">
-            Do not have an account?{" "}
+            Do not have an account?
             <span className="cursor-pointer text-blue-400 font-normal">
               Sign Up
             </span>

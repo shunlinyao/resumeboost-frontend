@@ -7,14 +7,13 @@ import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
-import LogIn from "./pages/LogIn";
 import Feedback from "./components/Feedback";
 
 const App: React.FC = () => {
   return (
     <Layout>
       <Header title="Dashboard" />
-
+      <Feedback />
       {/* <SignUp /> */}
       {/* <LogIn /> */}
       {/* <Layout /> */}
