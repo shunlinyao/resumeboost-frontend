@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
 import React from "react";
 import { Button, Input, Label } from "@windmill/react-ui";
-import background from "./SignUp.png";
 import image from "./SignUpImage.png";
 
 const SignUp: React.FC = () => {
