@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import { Dropdown, DropdownItem } from "@windmill/react-ui";
 
+import api from "../utils/api";
+
 const Navbar: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -84,7 +86,7 @@ const Navbar: React.FC = () => {
                     <DropdownItem tag="a" href="#" className="justify-between">
                       <span>Profile</span>
                     </DropdownItem>
-                    <DropdownItem onClick={() => {}}>
+                    <DropdownItem onClick={api.logout}>
                       <span>Logout</span>
                     </DropdownItem>
                   </Dropdown>

@@ -1,9 +1,16 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import { Button, Input, Label } from "@windmill/react-ui";
+
+import UserContext from "../context/UserContext";
+import api from "../utils/api";
 import image from "./LogInImage.png";
 
 const LogIn: React.FC = () => {
+  const { setUser } = useContext(UserContext);
+
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   const formik = useFormik({
@@ -11,8 +18,9 @@ const LogIn: React.FC = () => {
       email: "",
       password: "",
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      const user = await api.login(values);
+      setUser(user);
     },
   });
 
@@ -33,10 +41,12 @@ const LogIn: React.FC = () => {
         <div className="w-full">
           <h1 className="text-5xl font-medium py-2">Log In</h1>
           <p className="py-4">
-            Do not have an account?
-            <span className="cursor-pointer text-blue-400 font-normal">
-              Sign Up
-            </span>
+            Do not have an account?{" "}
+            <Link to="/signup">
+              <span className="cursor-pointer text-blue-400 font-normal">
+                Sign Up
+              </span>
+            </Link>
           </p>
           <form className="mt-4" onSubmit={formik.handleSubmit}>
             <Label className="mt-4">
