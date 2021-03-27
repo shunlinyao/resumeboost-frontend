@@ -15,6 +15,7 @@
     "@windmill/react-ui": "^0.5.1",
     "dayjs": "^1.10.4",
     "formik": "^2.2.6",
+    "rc-slider": "^9.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-pdf": "^5.2.0",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
+    "@types/rc-slider": "^8.6.6",
     "@testing-library/react": "^11.2.5",
     "@types/react-pdf": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^4.19.0",

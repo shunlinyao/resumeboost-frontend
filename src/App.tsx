@@ -13,6 +13,7 @@ import User from "./interfaces/User";
 import Dashboard from "./pages/Dashboard";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import Feedback from "./components/Feedback";
 import api from "./utils/api";
 
 const App: React.FC = () => {
