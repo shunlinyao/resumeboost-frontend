@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Card, CardBody } from "@windmill/react-ui";
-
 interface Props {
   metric: string;
   score: number;
@@ -9,7 +7,10 @@ interface Props {
 
 export const DashboardScoreCard: React.FC<Props> = ({ metric, score }) => {
   return (
-    <div className=" rounded-lg border shadow-lg p-10 w-64">
+    <div
+      className=" rounded-lg border shadow-lg p-10 w-64"
+      data-testid="scorecard"
+    >
       <div className="flex justify-center text-2xl font-semibold text-gray-500 ">
         {metric}
       </div>
