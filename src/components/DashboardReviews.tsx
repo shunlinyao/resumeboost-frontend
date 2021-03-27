@@ -1,19 +1,24 @@
-import React from "react";
-// import { Windmill } from "@windmill/react-ui";
+import React, { useContext, useEffect } from "react";
+
 import {
-  TableContainer,
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableFooter,
   Pagination,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableFooter,
+  TableHeader,
+  TableRow,
 } from "@windmill/react-ui";
+
+import UserContext from "../context/UserContext";
+import api from "../utils/api";
 import ReviewEntry from "./DashboardReviewEntry";
 
-export const DashboardReviews = () => {
-  return (
+export const DashboardReviews: React.FC = () => {
+  const { user } = useContext(UserContext);
+
+  return user && user?.reviews ? (
     <TableContainer className="max-w-4xl">
       <div className="p-4 font-bold">Reviews</div>
       <Table>
@@ -27,35 +32,15 @@ export const DashboardReviews = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {/* {TODO: Make a ReviewEntry for every review} */}
-          <ReviewEntry
-            date="2015-01-24"
-            visual={4}
-            content={3}
-            relevance={5}
-            comment="test comment"
-          />
-          <ReviewEntry
-            date="2015-01-24"
-            visual={4}
-            content={3}
-            relevance={5}
-            comment="test comment"
-          />
-          <ReviewEntry
-            date="2015-01-24"
-            visual={4}
-            content={3}
-            relevance={5}
-            comment="test comment"
-          />
-          <ReviewEntry
-            date="2015-01-24"
-            visual={4}
-            content={3}
-            relevance={5}
-            comment="test comment"
-          />
+          {user?.reviews.map((r) => (
+            <ReviewEntry
+              date={r.createdAt}
+              visual={r.visual}
+              content={r.content}
+              relevance={r.relevance}
+              comment={r.feedback}
+            />
+          ))}
         </TableBody>
       </Table>
       <TableFooter className="table-fixed">
@@ -67,6 +52,8 @@ export const DashboardReviews = () => {
         />
       </TableFooter>
     </TableContainer>
+  ) : (
+    <></>
   );
 };
 
