@@ -21,21 +21,29 @@ export const DashboardReviewEntry: React.FC<Props> = ({
   return (
     <TableRow>
       <TableCell>
-        <div className="flex items-center text-sm">
+        <div className="flex items-center text-sm" data-testid="date">
           {dayjs(date).format("MMM D, YYYY")}
         </div>
       </TableCell>
       <TableCell>
-        <div className="flex items-center text-sm">{visual}</div>
+        <div className="flex items-center text-sm" data-testid="visual">
+          {visual}
+        </div>
       </TableCell>
       <TableCell>
-        <div className="flex items-center text-sm">{content}</div>
+        <div className="flex items-center text-sm" data-testid="content">
+          {content}
+        </div>
       </TableCell>
       <TableCell>
-        <div className="flex items-center text-sm">{relevance}</div>
+        <div className="flex items-center text-sm" data-testid="relevance">
+          {relevance}
+        </div>
       </TableCell>
       <TableCell>
-        <div className="flex items-center text-sm">{comment}</div>
+        <div className="flex items-center text-sm" data-testid="comment">
+          {comment}
+        </div>
       </TableCell>
     </TableRow>
   );
