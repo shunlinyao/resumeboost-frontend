@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Dropdown, DropdownItem } from "@windmill/react-ui";
 
@@ -25,36 +26,22 @@ const Navbar: React.FC = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a
-                  href="/"
-                  className="bg-purple-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Dashboard
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Team
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Reports
-                </a>
+                <Link to="/dashboard">
+                  <a
+                    href="/"
+                    className="bg-purple-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Dashboard
+                  </a>
+                </Link>
+                <Link to="/review">
+                  <a
+                    href="/"
+                    className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Review
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

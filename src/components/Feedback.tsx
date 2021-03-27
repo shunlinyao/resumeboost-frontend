@@ -1,8 +1,12 @@
 import "rc-slider/assets/index.css";
-import React from "react";
-import { Badge, Button, Textarea, Label } from "@windmill/react-ui";
+
 import { Form, useFormik } from "formik";
 import Slider from "rc-slider";
+import React from "react";
+
+import { Badge, Button, Label, Textarea } from "@windmill/react-ui";
+
+import PDFView from "./PDFview";
 
 const Feedback: React.FC = () => {
   const formik = useFormik({
@@ -18,16 +22,18 @@ const Feedback: React.FC = () => {
   });
 
   return (
-    <div className="w-full h-full flex justify-center content-center items-center">
-      <div className="my-12 mx-20 w-1/2">{/* (Left part) */}</div>
-      <div className="mr-8 w-1/2 flex-reverse justify-center content-center items-center">
-        <div className="w-full shadow my-12 rounded-md p-12 bg-white">
+    <div className="flex space-x-6">
+      <div className="w-1/2 shadow-lg">
+        <PDFView />
+      </div>
+      <div className="w-1/2 flex-reverse justify-center content-center items-center">
+        <div className="w-full shadow rounded-md p-12 bg-white">
           <h1 className="text-3xl">Satoshi Nakamoto</h1>
           <div className="my-4 flex-wrap">
-            <Badge className="text-lg bg-gray-200 p-2 mx-2" type="neutral">
+            <Badge className="text-md bg-gray-200 p-2 mx-2" type="neutral">
               Robinhood
             </Badge>
-            <Badge className="text-lg bg-gray-200 p-2 mx-2" type="neutral">
+            <Badge className="text-md bg-gray-200 p-2 mx-2" type="neutral">
               Pround Day Trader
             </Badge>
           </div>

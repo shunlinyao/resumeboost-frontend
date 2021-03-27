@@ -3,6 +3,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 
+import Feedback from "./components/Feedback";
 import Header from "./components/Header";
 import Layout from "./components/Layout";
 import LoggedInRoute from "./components/LoggedInRoute";
@@ -13,7 +14,6 @@ import User from "./interfaces/User";
 import Dashboard from "./pages/Dashboard";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
-import Feedback from "./components/Feedback";
 import api from "./utils/api";
 
 const App: React.FC = () => {
@@ -57,11 +57,22 @@ const App: React.FC = () => {
           )}
         />
 
+        {/* Dashboard */}
         <Route
           path="/dashboard"
           render={() => (
             <LoggedInRoute>
               <Dashboard />
+            </LoggedInRoute>
+          )}
+        />
+
+        {/* Feedback */}
+        <Route
+          path="/review"
+          render={() => (
+            <LoggedInRoute>
+              <Feedback />
             </LoggedInRoute>
           )}
         />
