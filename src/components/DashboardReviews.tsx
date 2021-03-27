@@ -14,7 +14,7 @@ import ReviewEntry from "./DashboardReviewEntry";
 
 export const DashboardReviews = () => {
   return (
-    <TableContainer className="max-w-4xl">
+    <TableContainer className="max-w-4xl" data-testid="reviews">
       <div className="p-4 font-bold">Reviews</div>
       <Table>
         <TableHeader>
