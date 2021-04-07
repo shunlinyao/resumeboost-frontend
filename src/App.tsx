@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import api from "./utils/api";
+import { TargetEntry } from "./components/TargetEntry";
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User>();
@@ -24,60 +25,66 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      <Router>
-        {/* Landing Page */}
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <LoggedOutRoute>
-              <Redirect to="/dashboard" />
-            </LoggedOutRoute>
-          )}
-        />
+    <div className="flex">
+      <TargetEntry name="example company/job" />
+      <TargetEntry name="s" />
+      <TargetEntry name="large large large large large large large large large" />
+    </div>
 
-        {/* Login Page */}
-        <Route
-          path="/login"
-          render={() => (
-            <LoggedOutRoute>
-              <LogIn />
-            </LoggedOutRoute>
-          )}
-        />
+    // <UserContext.Provider value={{ user, setUser }}>
+    //   <Router>
+    //     {/* Landing Page */}
+    //     <Route
+    //       exact
+    //       path="/"
+    //       render={() => (
+    //         <LoggedOutRoute>
+    //           <Redirect to="/dashboard" />
+    //         </LoggedOutRoute>
+    //       )}
+    //     />
 
-        {/* Sign Up Page */}
-        <Route
-          path="/signup"
-          render={() => (
-            <LoggedOutRoute>
-              <SignUp />
-            </LoggedOutRoute>
-          )}
-        />
+    //     {/* Login Page */}
+    //     <Route
+    //       path="/login"
+    //       render={() => (
+    //         <LoggedOutRoute>
+    //           <LogIn />
+    //         </LoggedOutRoute>
+    //       )}
+    //     />
 
-        {/* Dashboard */}
-        <Route
-          path="/dashboard"
-          render={() => (
-            <LoggedInRoute>
-              <Dashboard />
-            </LoggedInRoute>
-          )}
-        />
+    //     {/* Sign Up Page */}
+    //     <Route
+    //       path="/signup"
+    //       render={() => (
+    //         <LoggedOutRoute>
+    //           <SignUp />
+    //         </LoggedOutRoute>
+    //       )}
+    //     />
 
-        {/* Feedback */}
-        <Route
-          path="/review"
-          render={() => (
-            <LoggedInRoute>
-              <Feedback />
-            </LoggedInRoute>
-          )}
-        />
-      </Router>
-    </UserContext.Provider>
+    //     {/* Dashboard */}
+    //     <Route
+    //       path="/dashboard"
+    //       render={() => (
+    //         <LoggedInRoute>
+    //           <Dashboard />
+    //         </LoggedInRoute>
+    //       )}
+    //     />
+
+    //     {/* Feedback */}
+    //     <Route
+    //       path="/review"
+    //       render={() => (
+    //         <LoggedInRoute>
+    //           <Feedback />
+    //         </LoggedInRoute>
+    //       )}
+    //     />
+    //   </Router>
+    // </UserContext.Provider>
   );
 };
 
