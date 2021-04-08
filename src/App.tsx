@@ -14,6 +14,7 @@ import User from "./interfaces/User";
 import Dashboard from "./pages/Dashboard";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import { UserProfile } from "./pages/UserProfile";
 import api from "./utils/api";
 
 const App: React.FC = () => {
@@ -73,6 +74,16 @@ const App: React.FC = () => {
           render={() => (
             <LoggedInRoute>
               <Feedback />
+            </LoggedInRoute>
+          )}
+        />
+
+        {/* User Profile */}
+        <Route
+          path="/profile"
+          render={() => (
+            <LoggedInRoute>
+              <UserProfile />
             </LoggedInRoute>
           )}
         />

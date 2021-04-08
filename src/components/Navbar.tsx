@@ -42,6 +42,14 @@ const Navbar: React.FC = () => {
                     Review
                   </a>
                 </Link>
+                <Link to="/profile">
+                  <a
+                    href="/"
+                    className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    User Profile
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
