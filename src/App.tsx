@@ -14,8 +14,8 @@ import User from "./interfaces/User";
 import Dashboard from "./pages/Dashboard";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import { UserProfile } from "./pages/UserProfile";
 import api from "./utils/api";
-import { TargetEntry } from "./components/TargetEntry";
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User>();
@@ -25,66 +25,70 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex">
-      <TargetEntry name="example company/job" />
-      <TargetEntry name="s" />
-      <TargetEntry name="large large large large large large large large large" />
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <Router>
+        {/* Landing Page */}
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <LoggedOutRoute>
+              <Redirect to="/dashboard" />
+            </LoggedOutRoute>
+          )}
+        />
 
-    // <UserContext.Provider value={{ user, setUser }}>
-    //   <Router>
-    //     {/* Landing Page */}
-    //     <Route
-    //       exact
-    //       path="/"
-    //       render={() => (
-    //         <LoggedOutRoute>
-    //           <Redirect to="/dashboard" />
-    //         </LoggedOutRoute>
-    //       )}
-    //     />
+        {/* Login Page */}
+        <Route
+          path="/login"
+          render={() => (
+            <LoggedOutRoute>
+              <LogIn />
+            </LoggedOutRoute>
+          )}
+        />
 
-    //     {/* Login Page */}
-    //     <Route
-    //       path="/login"
-    //       render={() => (
-    //         <LoggedOutRoute>
-    //           <LogIn />
-    //         </LoggedOutRoute>
-    //       )}
-    //     />
+        {/* Sign Up Page */}
+        <Route
+          path="/signup"
+          render={() => (
+            <LoggedOutRoute>
+              <SignUp />
+            </LoggedOutRoute>
+          )}
+        />
 
-    //     {/* Sign Up Page */}
-    //     <Route
-    //       path="/signup"
-    //       render={() => (
-    //         <LoggedOutRoute>
-    //           <SignUp />
-    //         </LoggedOutRoute>
-    //       )}
-    //     />
+        {/* Dashboard */}
+        <Route
+          path="/dashboard"
+          render={() => (
+            <LoggedInRoute>
+              <Dashboard />
+            </LoggedInRoute>
+          )}
+        />
 
-    //     {/* Dashboard */}
-    //     <Route
-    //       path="/dashboard"
-    //       render={() => (
-    //         <LoggedInRoute>
-    //           <Dashboard />
-    //         </LoggedInRoute>
-    //       )}
-    //     />
+        {/* Feedback */}
+        <Route
+          path="/review"
+          render={() => (
+            <LoggedInRoute>
+              <Feedback />
+            </LoggedInRoute>
+          )}
+        />
 
-    //     {/* Feedback */}
-    //     <Route
-    //       path="/review"
-    //       render={() => (
-    //         <LoggedInRoute>
-    //           <Feedback />
-    //         </LoggedInRoute>
-    //       )}
-    //     />
-    //   </Router>
-    // </UserContext.Provider>
+        {/* User Profile */}
+        <Route
+          path="/profile"
+          render={() => (
+            <LoggedInRoute>
+              <UserProfile />
+            </LoggedInRoute>
+          )}
+        />
+      </Router>
+    </UserContext.Provider>
   );
 };
 
