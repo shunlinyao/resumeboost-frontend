@@ -39,17 +39,22 @@ const LogIn: React.FC = () => {
       </div>
       <div className="w-1/2 h-screen flex content-center items-center px-24 bg-gray-100 ">
         <div className="w-full">
-          <h1 className="text-5xl font-medium py-2">Log In</h1>
+          <h1 className="text-5xl font-medium py-2" data-testid="title">
+            Log In
+          </h1>
           <p className="py-4">
             Do not have an account?{" "}
             <Link to="/signup">
-              <span className="cursor-pointer text-blue-400 font-normal">
+              <span
+                className="cursor-pointer text-blue-400 font-normal"
+                data-testid="link"
+              >
                 Sign Up
               </span>
             </Link>
           </p>
           <form className="mt-4" onSubmit={formik.handleSubmit}>
-            <Label className="mt-4">
+            <Label className="mt-4" data-testid="email">
               <span className="mt-4">E-mail</span>
               <Input
                 css=""
@@ -62,7 +67,7 @@ const LogIn: React.FC = () => {
               />
             </Label>
 
-            <Label className="mt-4">
+            <Label className="mt-4" data-testid="password">
               <span>Password</span>
               <Input
                 css=""
@@ -75,7 +80,7 @@ const LogIn: React.FC = () => {
               />
             </Label>
 
-            <Button className="my-8 w-full" type="submit">
+            <Button className="my-8 w-full" type="submit" data-testid="submit">
               Submit
             </Button>
           </form>
