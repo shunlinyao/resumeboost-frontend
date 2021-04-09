@@ -19,7 +19,7 @@ export const DashboardReviews: React.FC = () => {
   const { user } = useContext(UserContext);
 
   return user && user?.reviews ? (
-    <TableContainer className="max-w-4xl">
+    <TableContainer className="border rounded-lg shadow-lgs">
       <div className="p-4 font-bold">Reviews</div>
       <Table>
         <TableHeader>

@@ -33,7 +33,8 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "prepare": "husky install",
-    "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
+    "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks",
+    "test:cov": "craco test --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [

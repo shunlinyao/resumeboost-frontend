@@ -50,6 +50,14 @@ const Navbar: React.FC = () => {
                     User Profile
                   </a>
                 </Link>
+                <Link to="/abtesting">
+                  <a
+                    href="/"
+                    className="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    A/B Testing
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

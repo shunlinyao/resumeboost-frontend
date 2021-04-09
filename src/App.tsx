@@ -16,6 +16,7 @@ import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import { UserProfile } from "./pages/UserProfile";
 import api from "./utils/api";
+import { ABTesting } from "./pages/ABTesting";
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User>();
@@ -84,6 +85,16 @@ const App: React.FC = () => {
           render={() => (
             <LoggedInRoute>
               <UserProfile />
+            </LoggedInRoute>
+          )}
+        />
+
+        {/* A/B Testing */}
+        <Route
+          path="/abtesting"
+          render={() => (
+            <LoggedInRoute>
+              <ABTesting />
             </LoggedInRoute>
           )}
         />
