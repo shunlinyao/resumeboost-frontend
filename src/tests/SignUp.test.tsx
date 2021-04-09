@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Signup from "../pages/SignUp";
 
@@ -26,7 +26,16 @@ it("renders components correctly", () => {
   );
   expect(getByTestId("title")).toHaveTextContent("Sign Up");
   expect(getByTestId("link")).toHaveTextContent("Log in");
-  expect(getByTestId("email")).toHaveTextContent("E-mail");
-  expect(getByTestId("password")).toHaveTextContent("Password");
+
+  const email = getByTestId("email");
+  expect(email).toHaveTextContent("E-mail");
+  const inputInEmail = within(email).getAllByTestId("input");
+  expect(inputInEmail.length).toBe(1);
+
+  const password = getByTestId("password");
+  expect(password).toHaveTextContent("Password");
+  const inputInPassword = within(password).getAllByTestId("input");
+  expect(inputInPassword.length).toBe(1);
+
   expect(getByTestId("submit")).toHaveTextContent("Submit");
 });

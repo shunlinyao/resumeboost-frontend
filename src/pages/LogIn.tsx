@@ -64,6 +64,7 @@ const LogIn: React.FC = () => {
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.email}
+                data-testid="input"
               />
             </Label>
 
@@ -77,6 +78,7 @@ const LogIn: React.FC = () => {
                 type="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
+                data-testid="input"
               />
             </Label>
 
