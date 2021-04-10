@@ -7,9 +7,10 @@ import { Badge, Button, Label, Textarea } from "@windmill/react-ui";
 import Feedback from "../components/Feedback";
 
 afterEach(cleanup);
+
 jest.mock("../components/PDFView", () => () => <div>PDF Content</div>);
 
-// eslint-disable-next-line jest/expect-expect
+//  eslint-disable-next-line jest/expect-expect
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<Feedback />, div);
