@@ -61,7 +61,7 @@ export const UserProfile = () => {
               {/* TODO: Upload resume functionality */}
               <button
                 type="button"
-                className="px-8 p-4 border rounded-full bg-purple-800 text-white font-semibold text-sm"
+                className="px-6 p-2 border rounded-full bg-purple-800 text-white font-semibold text-sm"
               >
                 Upload Resume
               </button>

@@ -30,14 +30,14 @@ export const AddTargetEntry: React.FC<Props> = ({
     <div>
       <form className="m-4 flex">
         <input
-          className="rounded-lg p-4 mr-4 border text-gray-800 border-gray-200 text-sm"
+          className="rounded-lg p-2 mr-4 border text-gray-800 border-gray-200 text-sm"
           placeholder={placeholder}
           onChange={(event) => setInput(event.target.value)}
           // onChange={() => changeHandler(value)}
         />
         <button
           type="button"
-          className="px-8 p-4 border rounded-full bg-purple-800 text-white font-semibold text-sm"
+          className="px-6 p-2 border rounded-full bg-purple-800 text-white font-semibold text-sm"
           onClick={clickHandler}
         >
           {buttonLabel}
