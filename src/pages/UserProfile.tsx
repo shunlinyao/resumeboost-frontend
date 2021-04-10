@@ -83,6 +83,8 @@ export const UserProfile = () => {
               placeholder="enter company name"
               buttonLabel="Add Target Company"
               add={handleAddComp}
+              addTargetForm="AddCompForm"
+              addTargetButton="AddCompButton"
             />
           </div>
           {/* target positions box */}
@@ -97,6 +99,8 @@ export const UserProfile = () => {
               placeholder="enter position name"
               buttonLabel="Add Target Position"
               add={handleAddPos}
+              addTargetForm="AddPosForm"
+              addTargetButton="AddPosButton"
             />
           </div>
         </div>

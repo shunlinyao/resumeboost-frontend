@@ -7,7 +7,7 @@ import ReviewEntry from "../components/DashboardReviewEntry";
 afterEach(cleanup);
 
 // eslint-disable-next-line jest/expect-expect
-it("renders without crashing", () => {
+test("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <TableContainer className="max-w-4xl" data-testid="reviews">
@@ -29,7 +29,7 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it("renders ScoreCard score correcetly", () => {
+test("renders ScoreCard score correcetly", () => {
   const { getByTestId } = render(
     <TableContainer className="max-w-4xl" data-testid="reviews">
       <div className="p-4 font-bold">Reviews</div>
