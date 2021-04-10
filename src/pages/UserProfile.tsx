@@ -61,7 +61,7 @@ export const UserProfile = () => {
               {/* TODO: Upload resume functionality */}
               <button
                 type="button"
-                className="px-8 p-4 border rounded-full bg-purple-800 text-white font-semibold text-sm"
+                className="px-6 p-2 border rounded-full bg-purple-800 text-white font-semibold text-sm"
               >
                 Upload Resume
               </button>
@@ -70,7 +70,7 @@ export const UserProfile = () => {
         </div>
 
         {/* Right side of page */}
-        <div className="w-3/5 space-y-6">
+        <div className="w-3/5 space-y-10">
           {/* target companies box */}
           <div className="border rounded-lg shadow-lg">
             <div className="p-4 text-2xl">Target Companies</div>
