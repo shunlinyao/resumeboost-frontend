@@ -24,6 +24,7 @@ describe("DashboardReviews", () => {
             email: "email",
             points: 0,
             targetCompanies: [],
+            targetPositions: [],
             resumes: [],
             reviews: [
               {
@@ -37,6 +38,10 @@ describe("DashboardReviews", () => {
             ],
           },
           setUser: jest.fn(),
+          resumeFile: "",
+          setResumeFile: jest.fn(),
+          reviews: [],
+          setReviews: jest.fn(),
         }}
       >
         <DashboardReviews />
