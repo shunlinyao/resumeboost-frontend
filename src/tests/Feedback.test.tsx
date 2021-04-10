@@ -5,6 +5,7 @@ import Slider from "rc-slider";
 import { render, cleanup } from "@testing-library/react";
 import { Badge, Button, Label, Textarea } from "@windmill/react-ui";
 import Feedback from "../components/Feedback";
+
 afterEach(cleanup);
 jest.mock("../components/PDFView", () => () => <div>PDF Content</div>);
 
