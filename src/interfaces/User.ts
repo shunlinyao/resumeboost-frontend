@@ -9,13 +9,15 @@ interface Employer {
 interface Resume {
   _id: string;
   isActive: true;
+  link: string;
 }
 
 export default interface User {
   _id: string;
   email: string;
   points: number;
-  targetCompanies: Employer[];
+  targetCompanies: string[];
+  targetPositions: string[];
   resumes: Resume[];
   reviews?: Review[];
 }

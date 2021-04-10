@@ -1,20 +1,19 @@
 import "rc-slider/assets/index.css";
 
-import { Form, useFormik } from "formik";
-import Slider from "rc-slider";
-import React from "react";
-
 import { Badge, Button, Label, Textarea } from "@windmill/react-ui";
+import { Form, useFormik } from "formik";
 
 import PDFView from "./PDFview";
+import React from "react";
+import Slider from "rc-slider";
 
 const Feedback: React.FC = () => {
   const formik = useFormik({
     initialValues: {
-      response: "",
-      rating1: 0,
-      rating2: 0,
-      rating3: 0,
+      feedback: "",
+      visual: 0,
+      content: 0,
+      relevance: 4,
     },
     onSubmit: (values) => {
       console.log(values);
@@ -85,7 +84,7 @@ const Feedback: React.FC = () => {
                 name="response"
                 placeholder="Write down your response"
                 onChange={formik.handleChange}
-                value={formik.values.response}
+                value={formik.values.feedback}
               />
             </Label>
 

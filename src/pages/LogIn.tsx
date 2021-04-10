@@ -19,8 +19,12 @@ const LogIn: React.FC = () => {
       password: "",
     },
     onSubmit: async (values) => {
-      const user = await api.login(values);
-      setUser(user);
+      try {
+        const user = await api.login(values);
+        setUser(user);
+      } catch (err) {
+        console.log(err);
+      }
     },
   });
 

@@ -1,5 +1,3 @@
-import React, { useContext, useEffect } from "react";
-
 import {
   Pagination,
   Table,
@@ -10,15 +8,17 @@ import {
   TableHeader,
   TableRow,
 } from "@windmill/react-ui";
+import React, { useContext, useEffect } from "react";
 
+import { Review } from "../interfaces/Review";
+import ReviewEntry from "./DashboardReviewEntry";
 import UserContext from "../context/UserContext";
 import api from "../utils/api";
-import ReviewEntry from "./DashboardReviewEntry";
 
 export const DashboardReviews: React.FC = () => {
-  const { user } = useContext(UserContext);
+  const { reviews } = useContext(UserContext);
 
-  return user && user?.reviews ? (
+  return reviews ? (
     <TableContainer className="max-w-4xl">
       <div className="p-4 font-bold">Reviews</div>
       <Table>
@@ -31,9 +31,10 @@ export const DashboardReviews: React.FC = () => {
             <TableCell>Comments</TableCell>
           </TableRow>
         </TableHeader>
-        <TableBody>
-          {user?.reviews.map((r) => (
+        <TableBody data-testid="reviewTable">
+          {reviews.map((r) => (
             <ReviewEntry
+              key={r._id}
               date={r.createdAt}
               visual={r.visual}
               content={r.content}
@@ -44,8 +45,9 @@ export const DashboardReviews: React.FC = () => {
         </TableBody>
       </Table>
       <TableFooter className="table-fixed">
+        {/* TODO: Implement pagination */}
         <Pagination
-          totalResults={4}
+          totalResults={reviews.length}
           resultsPerPage={4}
           onChange={() => {}}
           label="Reviews"

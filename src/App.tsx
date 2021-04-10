@@ -1,31 +1,42 @@
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { Redirect, Route, BrowserRouter as Router } from "react-router-dom";
 
+import Dashboard from "./pages/Dashboard";
 import Feedback from "./components/Feedback";
 import Header from "./components/Header";
 import Layout from "./components/Layout";
+import LogIn from "./pages/LogIn";
 import LoggedInRoute from "./components/LoggedInRoute";
 import LoggedOutRoute from "./components/LoggedOutRoute";
 import Navbar from "./components/Navbar";
-import UserContext from "./context/UserContext";
-import User from "./interfaces/User";
-import Dashboard from "./pages/Dashboard";
-import LogIn from "./pages/LogIn";
+import { Review } from "./interfaces/Review";
 import SignUp from "./pages/SignUp";
+import User from "./interfaces/User";
+import UserContext from "./context/UserContext";
 import { UserProfile } from "./pages/UserProfile";
 import api from "./utils/api";
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User>();
+  const [reviews, setReviews] = useState<Review[]>();
+  const [resumeFile, setResumeFile] = useState<string>();
+
+  useEffect(() => {
+    if (user) {
+      console.log("Updated user");
+    }
+  }, [user]);
 
   useEffect(() => {
     api.getLoggedInUser().then((currentUser) => setUser(currentUser));
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider
+      value={{ user, setUser, reviews, setReviews, resumeFile, setResumeFile }}
+    >
       <Router>
         {/* Landing Page */}
         <Route
